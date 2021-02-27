@@ -17,7 +17,7 @@ class Database:
         pool = await asyncpg.create_pool(
             user=config.PG_USER,  # Пользователь базы (postgres или ваше имя), для которой была создана роль
             password=config.PG_PASSWORD,  # Пароль к пользователю
-            host=5432,  # Ip адрес базы данных. Если локальный компьютер - localhost, если докер - название сервиса
+            host="database-tg",  # Ip адрес базы данных. Если локальный компьютер - localhost, если докер - название сервиса
             database=config.DATABASE  # Название базы данных. По умолчанию - postgres, если вы не создавали свою
         )
         self.pool = pool
